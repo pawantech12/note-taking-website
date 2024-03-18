@@ -34,7 +34,7 @@ const EditProfile = () => {
     const fetchUserData = async () => {
       try {
         const response = await fetch(
-          `${window.location.origin}/api/auth/user`,
+          `https://note-taking-website.onrender.com/api/auth/user`,
           {
             method: "GET",
             headers: {
@@ -69,7 +69,7 @@ const EditProfile = () => {
     // sending data to backend using fetch api
     try {
       let response = await fetch(
-        `${window.location.origin}/api/auth/user/${userID}`,
+        `https://note-taking-website.onrender.com/api/auth/user/${userID}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json", Authorization: token },

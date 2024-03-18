@@ -29,7 +29,7 @@ const NoteCardList = () => {
     const fetchNotes = async () => {
       try {
         let response = await fetch(
-          `${window.location.origin}/api/notes?status=publish`,
+          `https://note-taking-website.onrender.com/api/notes?status=publish`,
           {
             method: "GET",
             headers: {

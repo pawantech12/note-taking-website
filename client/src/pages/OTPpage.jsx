@@ -25,7 +25,7 @@ const OTPPage = () => {
     // sending data to backend using fetch api
     try {
       let response = await fetch(
-        `${window.location.origin}/api/auth/otp-verify`,
+        `https://note-taking-website.onrender.com/api/auth/otp-verify`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

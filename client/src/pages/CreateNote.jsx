@@ -25,11 +25,14 @@ const CreateNote = () => {
 
     // sending data to backend using fetch api
     try {
-      let response = await fetch(`${window.location.origin}/api/notes`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Authorization: token },
-        body: JSON.stringify(data),
-      });
+      let response = await fetch(
+        `https://note-taking-website.onrender.com/api/notes`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Authorization: token },
+          body: JSON.stringify(data),
+        }
+      );
       let resdata = await response.json();
       if (!response.ok) {
         console.log("error occured");

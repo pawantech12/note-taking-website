@@ -21,7 +21,7 @@ const MyProfile = () => {
     const fetchUserData = async () => {
       try {
         const response = await fetch(
-          `${window.location.origin}/api/auth/user`,
+          `https://note-taking-website.onrender.com/api/auth/user`,
           {
             method: "GET",
             headers: {

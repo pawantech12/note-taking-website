@@ -19,7 +19,7 @@ const ForgotPassword = () => {
     // sending data to backend using fetch api
     try {
       let response = await fetch(
-        `${window.location.origin}/api/auth/forgot-password`,
+        `https://note-taking-website.onrender.com/api/auth/forgot-password`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
