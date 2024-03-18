@@ -25,11 +25,14 @@ const Login = () => {
 
     // sending data to backend using fetch api
     try {
-      let response = await fetch(`${window.location.origin}/api/auth/login`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
+      let response = await fetch(
+        `https://note-taking-website.onrender.com/api/auth/login`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        }
+      );
       let resdata = await response.json();
       if (!response.ok) {
         console.log("error occured");
