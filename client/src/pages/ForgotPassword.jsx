@@ -55,7 +55,7 @@ const ForgotPassword = () => {
           <img
             src="https://templates.iqonic.design/note-plus/html/assets/images/logo.png"
             alt="NotePlus Logo Image"
-            className="w-1/12"
+            className="w-12"
           />
           <span className="font-medium text-2xl">NotePlus</span>
         </div>
