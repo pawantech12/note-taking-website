@@ -19,7 +19,7 @@ It allows the application to access the request body as a JavaScript object. */
 app.use(express.json());
 app.use(cors());
 
-app.use("/api/auth", router);
+app.use("https://note-taking-website.onrender.com/api/auth", router);
 app.use("/api", noterouter);
 app.use("/api", contactrouter);
 
