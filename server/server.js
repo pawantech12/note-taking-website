@@ -17,9 +17,14 @@ const contactrouter = require("./router/contact-router");
 /* `app.use(express.json())` is a middleware function that parses incoming requests with JSON payloads.
 It allows the application to access the request body as a JavaScript object. */
 app.use(express.json());
-app.use(cors());
+const corsOptions = {
+  origin: "https://note-taking-website-six.vercel.app/",
+  methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
+  credentials: true,
+};
+app.use(cors(corsOptions));
 
-app.use("https://note-taking-website.onrender.com/api/auth", router);
+app.use("/api/auth", router);
 app.use("/api", noterouter);
 app.use("/api", contactrouter);
 
