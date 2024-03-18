@@ -24,7 +24,7 @@ const UpdatePassword = () => {
     // sending data to backend using fetch api
     try {
       let response = await fetch(
-        "http://localhost:3000/api/auth/reset-password",
+        `${window.location.origin}/api/auth/reset-password`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

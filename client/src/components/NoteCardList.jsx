@@ -29,7 +29,7 @@ const NoteCardList = () => {
     const fetchNotes = async () => {
       try {
         let response = await fetch(
-          "http://localhost:3000/api/notes?status=publish",
+          `${window.location.origin}/api/notes?status=publish`,
           {
             method: "GET",
             headers: {

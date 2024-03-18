@@ -24,11 +24,14 @@ const OTPPage = () => {
 
     // sending data to backend using fetch api
     try {
-      let response = await fetch("http://localhost:3000/api/auth/otp-verify", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ otp: data.otp, email: email }),
-      });
+      let response = await fetch(
+        `${window.location.origin}/api/auth/otp-verify`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ otp: data.otp, email: email }),
+        }
+      );
       let resdata = await response.json();
       if (!response.ok) {
         console.log("error occured");

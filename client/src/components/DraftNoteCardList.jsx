@@ -28,7 +28,7 @@ const DraftNoteCardList = () => {
     const fetchNotes = async () => {
       try {
         let response = await fetch(
-          "http://localhost:3000/api/notes?status=draft",
+          `${window.location.origin}/api/notes?status=draft`,
           {
             method: "GET",
             headers: {

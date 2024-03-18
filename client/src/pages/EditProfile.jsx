@@ -33,12 +33,15 @@ const EditProfile = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/auth/user", {
-          method: "GET",
-          headers: {
-            Authorization: token,
-          },
-        });
+        const response = await fetch(
+          `${window.location.origin}/api/auth/user`,
+          {
+            method: "GET",
+            headers: {
+              Authorization: token,
+            },
+          }
+        );
         const userData = await response.json();
         setUserData(userData);
       } catch (error) {
@@ -66,7 +69,7 @@ const EditProfile = () => {
     // sending data to backend using fetch api
     try {
       let response = await fetch(
-        `http://localhost:3000/api/auth/user/${userID}`,
+        `${window.location.origin}/api/auth/user/${userID}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json", Authorization: token },

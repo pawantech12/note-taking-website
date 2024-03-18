@@ -20,12 +20,15 @@ const MyProfile = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/auth/user", {
-          method: "GET",
-          headers: {
-            Authorization: token,
-          },
-        });
+        const response = await fetch(
+          `${window.location.origin}/api/auth/user`,
+          {
+            method: "GET",
+            headers: {
+              Authorization: token,
+            },
+          }
+        );
         const userData = await response.json();
         setUserData(userData);
         setUserID(userData._id);

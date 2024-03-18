@@ -26,7 +26,7 @@ const EditNote = () => {
     const getNoteData = async () => {
       try {
         let response = await fetch(
-          `http://localhost:3000/api/notes/${noteID}`,
+          `${window.location.origin}/api/notes/${noteID}`,
           {
             method: "GET",
             headers: {
@@ -51,11 +51,14 @@ const EditNote = () => {
 
     // sending data to backend using fetch api
     try {
-      let response = await fetch(`http://localhost:3000/api/notes/${noteID}`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json", Authorization: token },
-        body: JSON.stringify(data),
-      });
+      let response = await fetch(
+        `${window.location.origin}/api/notes/${noteID}`,
+        {
+          method: "PUT",
+          headers: { "Content-Type": "application/json", Authorization: token },
+          body: JSON.stringify(data),
+        }
+      );
       let resnotedata = await response.json();
       if (!response.ok) {
         console.log("error occured");
