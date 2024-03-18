@@ -18,7 +18,7 @@ const contactrouter = require("./router/contact-router");
 It allows the application to access the request body as a JavaScript object. */
 app.use(express.json());
 const corsOptions = {
-  origin: "https://note-taking-website-six.vercel.app/",
+  origin: "https://note-taking-website-six.vercel.app",
   methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
   credentials: true,
 };
