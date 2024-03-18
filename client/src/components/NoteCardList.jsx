@@ -52,7 +52,7 @@ const NoteCardList = () => {
   }, [token]);
 
   return (
-    <div className="bg-zinc-50 p-4 mt-2 rounded flex gap-2 h-fit relative">
+    <div className="bg-zinc-50 p-4 mt-2 rounded flex max-sm:flex-col gap-2 h-fit relative">
       {noNotesMessage ? ( // Display message if there are no notes
         <p className="bg-neutral-600 text-white text-center py-2 rounded-md mb-4 w-full">
           No notes published yet.

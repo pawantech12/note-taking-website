@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";
 import { useNavigate } from "react-router-dom";
@@ -13,15 +13,40 @@ const Dashboard = ({ element }) => {
       navigate("/login");
     }
   }, [token, navigate]);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+  const menuRef = useRef();
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsSidebarOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
-    <div className="flex justify-between gap-3 bg-slate-100">
-      <Sidebar />
-      <div className="flex flex-col justify-between right-container w-3/4 ms-80">
-        <Navbar />
-        {element}
-        <Footer />
-      </div>
+    <div
+      className={`relative ${
+        isSidebarOpen ? "overflow-hidden" : ""
+      } h-screen flex flex-col justify-between`}
+    >
+      <Navbar toggleSidebar={toggleSidebar} />
+      <Sidebar
+        isSidebarOpen={isSidebarOpen}
+        menuref={menuRef}
+        toggleSidebar={toggleSidebar}
+      />
+      {element}
+      <Footer />
     </div>
   );
 };

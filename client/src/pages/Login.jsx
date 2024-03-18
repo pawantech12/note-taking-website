@@ -45,7 +45,7 @@ const Login = () => {
         setMsg(resdata.msg);
         setTimeout(() => {
           setShowMessage(false);
-          navigate("/dashboard");
+          navigate("/dashboard/your-notes");
         }, 3000);
         setShowMessage(true);
       }
@@ -54,8 +54,8 @@ const Login = () => {
     }
   };
   return (
-    <div className="container flex justify-center items-center h-screen">
-      <div className="w-1/3 shadow-[0_0px_40px_rgb(0,0,0,5%)] p-5 rounded-lg bg-white">
+    <div className="flex justify-center items-center h-screen">
+      <div className="w-1/3 shadow-[0_0px_40px_rgb(0,0,0,5%)] p-5 rounded-lg bg-white max-lg:w-1/2 max-sm:w-11/12">
         <div className="w-full flex justify-center items-center gap-3">
           <img
             src="https://templates.iqonic.design/note-plus/html/assets/images/logo.png"
@@ -112,8 +112,10 @@ const Login = () => {
               />
             </div>
             <div className="agree-terms flex gap-2 items-center">
-              <input type="checkbox" name="agreecheck" />
-              <p className=" font-medium text-slate-400">Remember me</p>
+              <input type="checkbox" name="rememberme" id="rememberme" />
+              <label htmlFor="rememberme" className="text-slate-400">
+                Remember Me
+              </label>
               <Link
                 to="/forgot-pass"
                 className="ml-auto float-left text-neutral-800 hover:text-neutral-950"

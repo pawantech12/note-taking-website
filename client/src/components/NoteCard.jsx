@@ -45,34 +45,34 @@ const NoteCard = ({ title, content, createdAt, noteID, onViewNote }) => {
   };
   return (
     <div
-      className="bg-white rounded-lg shadow w-72 px-5 py-4 mb-8"
+      className="bg-white rounded-lg shadow w-72 px-5 py-4 mb-8 max-sm:w-full"
       data-aos="fade-up"
     >
       <h1 className="text-xl font-medium">{title}</h1>
       <p className="mt-3 text-gray-500 font-normal">
         {limitContent(content, 100)}
       </p>
-      <div className="flex justify-between items-center mt-2">
-        <span className="flex items-center gap-1 text-sm text-neutral-900 font-medium">
+      <div className="flex justify-between items-center mt-2 max-[426px]:flex-col">
+        <span className="flex items-center max-[426px]:items-start self-baseline gap-1 text-sm text-neutral-900 font-medium">
           {" "}
           <CalendarMonthRounded />
           {createdAt}
         </span>
-        <div className="action-button flex items-center gap-1">
-          <Button className="text-black w-fit px-2 py-1 hover:bg-neutral-900 hover:text-white">
+        <div className="action-button flex justify-between max-[426px]:mt-3 items-center gap-1 max-[426px]:w-full">
+          <Button className="text-black w-fit px-2 py-1 max-[426px]:w-1/4 max-[426px]:p-2 hover:bg-neutral-900 hover:text-white">
             <Link to={`/dashboard/edit-note/${noteID}`}>
-              <EditOutlined className="!w-5" />
+              <EditOutlined className="!w-full" />
             </Link>
           </Button>
           <Button
-            className="text-black w-fit px-2 py-1 hover:bg-neutral-900 hover:text-white"
+            className="text-black w-fit px-2 py-1 max-[426px]:w-1/4 max-[426px]:p-2 hover:bg-neutral-900 hover:text-white"
             onClick={onViewNote}
           >
             <VisibilityOutlined className="!w-5" />
           </Button>
 
           <Button
-            className="text-black w-fit px-2 py-1 hover:bg-neutral-900 hover:text-white"
+            className="text-black w-fit px-2 py-1 max-[426px]:w-1/4 max-[426px]:p-2 hover:bg-neutral-900 hover:text-white"
             onClick={() => handleDeleteNote(noteID)}
           >
             <DeleteOutline className="!w-5" />

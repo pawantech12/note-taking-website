@@ -21,6 +21,15 @@ const nodemailer = require("nodemailer");
  *   - "msg": "Registration Successfull"
  *   - "token": the generated token for the user
  */
+const transporter = nodemailer.createTransport({
+  host: "smtp.gmail.com",
+  port: 587,
+  secure: false,
+  auth: {
+    user: "codewithpawanofficial@gmail.com",
+    pass: "ghihcljrufojsngj",
+  },
+});
 const register = async (req, res) => {
   try {
     console.log(req.body);
@@ -39,6 +48,40 @@ const register = async (req, res) => {
       email,
       phone,
       password,
+    });
+    let mailOptions = {
+      from: "codewithpawanofficial@gmail.com",
+      to: email,
+      subject: "Welcome to NotePlus!",
+      text: `Hi ${userCreated.firstname} ${userCreated.lastname},
+
+  Thanks for signing up for NotePlus! We're thrilled to welcome you to the community of people who are taking control of their ideas and boosting their productivity.
+      
+  NotePlus is a simple yet powerful web app designed to help you capture your thoughts, organize information, and achieve your goals. Whether you're a student jotting down lecture notes, a professional crafting meeting agendas, or simply someone who loves keeping to-do lists, NotePlus has you covered.
+      
+  Get Started with NotePlus:
+      
+  Ready to dive in? Here's how to get the most out of your NotePlus experience:
+      
+  Explore the Interface: Our user-friendly interface makes note-taking effortless. Take a few minutes to explore the features and discover how NotePlus can streamline your workflow.
+  Create Your First Note: Get started by jotting down a quick idea or creating a detailed list. Experiment with features like rich text formatting and tags to personalize your notes.
+  Organize Your Notes: Keep your thoughts organized with folders, tags, and color coding. Find what you need instantly with our powerful search functionality.
+
+  We're Here to Help:
+      
+  If you have any questions or need assistance, don't hesitate to reach out to our friendly customer support team at codewithpawanofficial@gmail.com. We're always happy to help!
+      
+  Best regards,
+      
+  The NotePlus Team`,
+    };
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        return res.status(500).json({ message: "Failed to send email" });
+      }
+      res.status(200).json({
+        msg: "Registration Successfull Email sent to your email",
+      });
     });
     res.status(201).json({
       msg: "Registration Successfull",

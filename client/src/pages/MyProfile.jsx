@@ -39,7 +39,7 @@ const MyProfile = () => {
     }
   }, [token]);
   return (
-    <div className="bg-white min-h-[70vh] m-6 px-7 py-6 rounded-lg shadow-[0_0px_40px_rgb(0,0,0,0.05)]">
+    <div className="bg-white m-6 px-7 py-6 rounded-lg shadow-[0_0px_40px_rgb(0,0,0,0.05)]">
       <div className="container-header flex justify-between items-center mb-3">
         <h2 className="text-2xl">My Profile</h2>
         <Button
@@ -52,8 +52,8 @@ const MyProfile = () => {
       <Divider />
       <div className="form">
         <form action="" className="flex flex-col gap-6">
-          <div className="name-input flex justify-between gap-7">
-            <div className="input flex flex-col w-1/2">
+          <div className="name-input flex justify-between gap-7 max-sm:flex-col max-sm:gap-5">
+            <div className="input flex flex-col w-1/2 max-sm:w-full">
               <label htmlFor="firstName">First Name:</label>
               <input
                 type="text"
@@ -64,7 +64,7 @@ const MyProfile = () => {
                 placeholder="Firstname"
               />
             </div>
-            <div className="input flex flex-col w-1/2">
+            <div className="input flex flex-col w-1/2 max-sm:w-full">
               <label htmlFor="lastName">Last Name:</label>
               <input
                 type="text"
@@ -76,8 +76,8 @@ const MyProfile = () => {
               />
             </div>
           </div>
-          <div className="flex justify-between gap-7">
-            <div className="input flex flex-col w-1/2">
+          <div className="flex justify-between gap-7 max-sm:flex-col max-sm:gap-5">
+            <div className="input flex flex-col w-1/2 max-sm:w-full">
               <label htmlFor="city">City:</label>
               <input
                 type="text"
@@ -88,7 +88,7 @@ const MyProfile = () => {
                 placeholder="City"
               />
             </div>
-            <div className="input flex flex-col w-1/2">
+            <div className="input flex flex-col w-1/2 max-sm:w-full">
               <label htmlFor="state">State:</label>
               <input
                 type="text"
@@ -100,8 +100,8 @@ const MyProfile = () => {
               />
             </div>
           </div>
-          <div className="flex justify-between gap-7">
-            <div className="input flex flex-col w-1/2">
+          <div className="flex justify-between gap-7 max-sm:flex-col max-sm:gap-5">
+            <div className="input flex flex-col w-1/2 max-sm:w-full">
               <label htmlFor="country">Country:</label>
               <input
                 type="text"
@@ -112,7 +112,7 @@ const MyProfile = () => {
                 placeholder="country"
               />
             </div>
-            <div className="input flex flex-col w-1/2">
+            <div className="input flex flex-col w-1/2 max-sm:w-full">
               <label htmlFor="dob">Date Of Birth:</label>
               <input
                 type="date"
@@ -124,8 +124,8 @@ const MyProfile = () => {
               />
             </div>
           </div>
-          <div className="flex justify-between gap-7">
-            <div className="input flex flex-col w-1/2">
+          <div className="flex justify-between gap-7 max-sm:flex-col max-sm:gap-5">
+            <div className="input flex flex-col w-1/2 max-sm:w-full">
               <label htmlFor="gender">Gender:</label>
               <input
                 type="text"
@@ -135,7 +135,7 @@ const MyProfile = () => {
                 id="gender"
               />
             </div>
-            <div className="input flex flex-col w-1/2">
+            <div className="input flex flex-col w-1/2 max-sm:w-full">
               <label htmlFor="age">Age:</label>
               <input
                 type="number"

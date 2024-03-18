@@ -50,20 +50,20 @@ const Contact = () => {
       <div className="contact flex flex-col items-center mt-10">
         <div className="text-center flex flex-col items-center gap-3">
           <h2 className="text-4xl font-bold">Get in Touch</h2>
-          <p className="text-xl w-[60%]">
+          <p className="text-xl w-[60%] max-md:w-11/12">
             Have a question, need help, or want to chat about ideas? We'd love
             to hear from you! Reach out using the form below, send us an email.
           </p>
         </div>
-        <div className="mt-10 bg-white py-8 px-10 rounded-lg w-[45%]">
+        <div className="mt-10 bg-white py-8 px-10 rounded-lg w-[45%] max-lg:w-10/12 max-sm:w-11/12">
           {showMessage && (
             <p className="bg-neutral-600 text-white text-center py-2 px-3 rounded-md mb-4">
               {msg}
             </p>
           )}
           <form action="" onSubmit={handleSubmit(onSubmit)} className="w-full">
-            <div className="input flex justify-between gap-7">
-              <div className="w-1/2 flex flex-col gap-2">
+            <div className="input flex justify-between gap-7 max-sm:gap-5 max-sm:flex-col">
+              <div className="w-1/2 flex flex-col gap-2 max-sm:w-full">
                 <label htmlFor="name" className="font-semibold text-lg">
                   Name
                 </label>
@@ -97,7 +97,7 @@ const Contact = () => {
                   </p>
                 )}
               </div>
-              <div className="w-1/2 flex flex-col gap-2">
+              <div className="w-1/2 max-sm:w-full flex flex-col gap-2">
                 <label htmlFor="email" className="font-semibold text-lg">
                   Email
                 </label>
@@ -124,8 +124,8 @@ const Contact = () => {
                 )}
               </div>
             </div>
-            <div className="input flex justify-between gap-7">
-              <div className="w-1/2 flex flex-col gap-2">
+            <div className="input flex max-sm:mt-6 justify-between gap-7 max-sm:gap-5 max-sm:flex-col">
+              <div className="w-1/2 flex flex-col gap-2 max-sm:w-full">
                 <label htmlFor="phone" className="font-semibold text-lg">
                   Phone
                 </label>
@@ -156,7 +156,7 @@ const Contact = () => {
                   </p>
                 )}
               </div>
-              <div className="w-1/2 flex flex-col gap-2">
+              <div className="w-1/2 flex flex-col gap-2 max-sm:w-full">
                 <label htmlFor="subject" className="font-semibold text-lg">
                   Subject
                 </label>
@@ -187,7 +187,7 @@ const Contact = () => {
                 )}
               </div>
             </div>
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-1 max-sm:mt-6">
               <label htmlFor="message" className="font-semibold text-lg">
                 Message
               </label>

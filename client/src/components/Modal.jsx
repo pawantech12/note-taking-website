@@ -13,7 +13,7 @@ const Modal = ({ title, content, createdAt, onClose }) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-filter">
       <div
-        className="modal-content w-1/3 h-fit bg-white rounded-lg shadow-lg z-50 px-5 py-3"
+        className="modal-content w-1/3 max-lg:w-1/2 max-sm:w-11/12 h-fit bg-white rounded-lg shadow-lg z-50 px-5 py-3"
         data-aos="fade-up"
       >
         <div className="header flex items-center justify-between">

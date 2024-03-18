@@ -3,8 +3,14 @@ import { Logout, Person2Outlined, SettingsOutlined } from "@mui/icons-material";
 import Divider from "./Divider";
 import { Link } from "react-router-dom";
 import ProfileImg from "../images/profile.jpg";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const AccountMenu = () => {
+  useEffect(() => {
+    AOS.init();
+    // console.log(window.location.pathname);
+  }, []);
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef();
   const handleLinkClick = () => {
@@ -33,28 +39,31 @@ const AccountMenu = () => {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-md py-2">
+        <div
+          className="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-md py-2"
+          data-aos="ease-in-out"
+        >
           <button className="px-4 py-1 text-base text-gray-700 hover:bg-gray-100 w-full text-left">
             <Link
               to="/dashboard/myprofile"
               onClick={handleLinkClick}
-              className="flex items-center gap-2 "
+              className="flex items-center gap-2 w-full"
             >
               <Person2Outlined className="!text-xl" /> Profile
             </Link>
           </button>
           <button className="flex items-center gap-2 px-4 py-1 text-base text-gray-700 hover:bg-gray-100 w-full text-left">
             <Link
-              to="/dashboard/myprofile"
+              to=""
               onClick={handleLinkClick}
-              className="flex items-center gap-2 "
+              className="flex items-center gap-2 w-full"
             >
               <SettingsOutlined className="!text-xl" /> Settings
             </Link>
           </button>
           <Divider />
           <button className="flex items-center gap-2 px-4 py-1 text-base text-gray-700 hover:bg-gray-100 w-full text-left">
-            <Link to="/logout" className="flex items-center gap-2 ">
+            <Link to="/logout" className="flex items-center gap-2 w-full">
               <Logout className="!text-xl" /> Logout
             </Link>
           </button>

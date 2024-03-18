@@ -6,7 +6,7 @@ import Divider from "../components/Divider";
 
 const YourNotes = () => {
   return (
-    <div className="notes-container bg-white min-h-[70vh] m-6 px-7 py-6 rounded-lg shadow-[0_0px_40px_rgb(0,0,0,0.05)]">
+    <div className="notes-container bg-white m-6 px-7 py-6 rounded-lg shadow-[0_0px_40px_rgb(0,0,0,0.05)]">
       <div className="container-header flex justify-between items-center mb-3">
         <h2 className="text-2xl">Your Notes</h2>
         <Button

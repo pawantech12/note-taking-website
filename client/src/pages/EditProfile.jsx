@@ -92,7 +92,7 @@ const EditProfile = () => {
   };
 
   return (
-    <div className="bg-white min-h-[70vh] m-6 px-7 py-6 rounded-lg shadow-[0_0px_40px_rgb(0,0,0,0.05)]">
+    <div className="bg-white m-6 px-7 py-6 rounded-lg shadow-[0_0px_40px_rgb(0,0,0,0.05)]">
       <div className="container-header mb-3">
         <h2 className="text-2xl">Edit Profile</h2>
       </div>
@@ -108,8 +108,8 @@ const EditProfile = () => {
           className="flex flex-col gap-6"
           onSubmit={handleSubmit(onSubmit)}
         >
-          <div className="name-input flex justify-between gap-7">
-            <div className="input flex flex-col w-1/2">
+          <div className="name-input flex justify-between gap-7 max-sm:flex-col max-sm:gap-5">
+            <div className="input flex flex-col w-1/2 max-sm:w-full">
               <label htmlFor="firstName">First Name:</label>
               <input
                 type="text"
@@ -141,7 +141,7 @@ const EditProfile = () => {
                 </p>
               )}
             </div>
-            <div className="input flex flex-col w-1/2">
+            <div className="input flex flex-col w-1/2 max-sm:w-full">
               <label htmlFor="lastName">Last Name:</label>
               <input
                 type="text"
@@ -174,8 +174,8 @@ const EditProfile = () => {
               )}
             </div>
           </div>
-          <div className="flex justify-between gap-7">
-            <div className="input flex flex-col w-1/2">
+          <div className="flex justify-between gap-7 max-sm:flex-col max-sm:gap-5">
+            <div className="input flex flex-col w-1/2 max-sm:w-full">
               <label htmlFor="city">City:</label>
               <input
                 type="text"
@@ -202,7 +202,7 @@ const EditProfile = () => {
                 placeholder="City"
               />
             </div>
-            <div className="input flex flex-col w-1/2">
+            <div className="input flex flex-col w-1/2 max-sm:w-full">
               <label htmlFor="state">State:</label>
               <input
                 type="text"
@@ -230,8 +230,8 @@ const EditProfile = () => {
               />
             </div>
           </div>
-          <div className="flex justify-between gap-7">
-            <div className="input flex flex-col w-1/2">
+          <div className="flex justify-between gap-7 max-sm:flex-col max-sm:gap-5">
+            <div className="input flex flex-col w-1/2 max-sm:w-full">
               <label htmlFor="country">Country:</label>
               <input
                 type="text"
@@ -258,7 +258,7 @@ const EditProfile = () => {
                 placeholder="country"
               />
             </div>
-            <div className="input flex flex-col w-1/2">
+            <div className="input flex flex-col w-1/2 max-sm:w-full">
               <label htmlFor="dob">Date Of Birth:</label>
               <input
                 type="date"
@@ -274,8 +274,8 @@ const EditProfile = () => {
               />
             </div>
           </div>
-          <div className="flex justify-between gap-7">
-            <div className="input flex flex-col w-1/2">
+          <div className="flex justify-between gap-7 max-sm:flex-col max-sm:gap-5">
+            <div className="input flex flex-col w-1/2 max-sm:w-full">
               <label htmlFor="gender">Gender:</label>
               <select
                 className="mt-2 outline-none px-2 h-11 rounded-lg border-2 border-zinc-200 bg-violet-50 text-slate-500 text-base font-normal focus:bg-white"
@@ -293,7 +293,7 @@ const EditProfile = () => {
                 <option value="female">Female</option>
               </select>
             </div>
-            <div className="input flex flex-col w-1/2">
+            <div className="input flex flex-col w-1/2 max-sm:w-full">
               <label htmlFor="age">Age:</label>
               <input
                 type="number"

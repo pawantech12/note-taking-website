@@ -44,8 +44,8 @@ const Register = () => {
   };
 
   return (
-    <div className="container flex justify-center items-center h-screen">
-      <div className="w-1/2 shadow-[0_0px_40px_rgb(0,0,0,5%)] p-5 rounded-lg bg-white">
+    <div className="flex justify-center items-center h-screen my-5">
+      <div className="w-1/2 shadow-[0_0px_40px_rgb(0,0,0,5%)] p-5 rounded-lg bg-white max-sm:w-3/4 max-[431px]:w-11/12">
         <div className="w-full flex justify-center items-center gap-3">
           <img
             src="https://templates.iqonic.design/note-plus/html/assets/images/logo.png"
@@ -71,8 +71,8 @@ const Register = () => {
             className="flex flex-col gap-6"
             onSubmit={handleSubmit(onSubmit)}
           >
-            <div className="name-input flex justify-between gap-7">
-              <div className="input flex flex-col w-1/2">
+            <div className="name-input flex justify-between gap-7 max-lg:flex-col max-lg:gap-5">
+              <div className="input flex flex-col w-1/2 max-lg:w-full">
                 <input
                   type="text"
                   className="outline-none px-2 h-11 rounded-lg border-2 border-zinc-200 bg-violet-50 text-slate-500 text-base font-normal focus:bg-white"
@@ -102,7 +102,7 @@ const Register = () => {
                   </p>
                 )}
               </div>
-              <div className="input flex flex-col w-1/2">
+              <div className="input flex flex-col w-1/2 max-lg:w-full">
                 <input
                   type="text"
                   className="outline-none px-2 h-11 rounded-lg border-2 border-zinc-200 bg-violet-50 text-slate-500 text-base font-normal focus:bg-white"
@@ -155,8 +155,8 @@ const Register = () => {
                 </p>
               )}
             </div>
-            <div className="password-input flex justify-between gap-7">
-              <div className="input flex flex-col w-1/2">
+            <div className="password-input flex justify-between gap-7 max-lg:flex-col max-lg:gap-5">
+              <div className="input flex flex-col w-1/2 max-lg:w-full">
                 <input
                   type="password"
                   className="outline-none px-2 h-11 rounded-lg border-2 border-zinc-200 bg-violet-50 text-slate-500 text-base font-normal focus:bg-white"
@@ -185,7 +185,7 @@ const Register = () => {
                   </p>
                 )}
               </div>
-              <div className="input flex flex-col w-1/2">
+              <div className="input flex flex-col w-1/2 max-lg:w-full">
                 <input
                   type="password"
                   className="outline-none px-2 h-11 rounded-lg border-2 border-zinc-200 bg-violet-50 text-slate-500 text-base font-normal focus:bg-white"

@@ -11,14 +11,14 @@ const Homepage = () => {
   return (
     <>
       <div className="flex flex-col items-center justify-center h-screen text-center gap-7">
-        <h1 className="text-6xl font-bold leading-tight">
+        <h1 className="text-6xl max-md:text-4xl font-bold leading-tight">
           <span className="bg-neutral-800 text-white px-4 rounded-md">
             NotePlus
           </span>{" "}
           Your All-in-One <br />
           Note-Taking Hub.
         </h1>
-        <p className="text-xl w-1/2">
+        <p className="text-xl w-1/2 max-md:w-11/12">
           Drowning in sticky notes and scattered thoughts? Struggling to keep
           track of your ideas and to-dos? NotePlus is the answer.
         </p>
@@ -27,11 +27,11 @@ const Homepage = () => {
         </button>
       </div>
       <div>
-        <div className="flex justify-around items-center">
-          <h2 className="text-4xl font-bold w-[40%]">
+        <div className="flex justify-around items-center max-md:flex-col max-md:text-center max-md:gap-4">
+          <h2 className="text-4xl font-bold w-[40%] max-md:w-11/12">
             Why is NotePlus a great note taking app for you?
           </h2>
-          <p className="w-[40%] text-xl">
+          <p className="w-[40%] max-md:w-11/12 text-xl">
             NotePlus simplifies note-taking with powerful features that let you
             capture ideas, organize thoughts, and refine your workflow.
           </p>
