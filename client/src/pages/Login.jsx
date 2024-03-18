@@ -26,7 +26,7 @@ const Login = () => {
     // sending data to backend using fetch api
     try {
       let response = await fetch(
-        `https://note-taking-website.onrender.com/api/auth/login`,
+        `https://note-taking-website.onrender.com:3000/api/auth/login`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
