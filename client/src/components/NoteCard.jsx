@@ -23,10 +23,13 @@ const NoteCard = ({ title, content, createdAt, noteID, onViewNote }) => {
   // creating delete note function by taking note id as parameter
   const handleDeleteNote = async (id) => {
     try {
-      let response = await fetch(`http://localhost:3000/api/notes/${id}`, {
-        method: "DELETE",
-        headers: { Authorization: token },
-      });
+      let response = await fetch(
+        `https://note-taking-website.onrender.com/api/notes/${id}`,
+        {
+          method: "DELETE",
+          headers: { Authorization: token },
+        }
+      );
       if (!response.ok) {
         console.log("Error occurred while deleting the note.");
       } else {
