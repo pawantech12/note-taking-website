@@ -13,6 +13,9 @@ const transporter = nodemailer.createTransport({
     user: "codewithpawanofficial@gmail.com",
     pass: "ghihcljrufojsngj",
   },
+  tls: {
+    rejectUnauthorized: false
+  }
 });
 
 /**
@@ -77,7 +80,8 @@ const forgotPassword = async (req, res) => {
     };
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
-        return res.status(500).json({ message: "Failed to send email" });
+        console.error("Error sending email:", error);
+        return res.status(500).json({ message: "failed to send email"});
       }
       res.status(200).json({
         message: "Reset Password Code has been Successfully sent to your email",
@@ -86,6 +90,7 @@ const forgotPassword = async (req, res) => {
     // console.log(`The reset code for this user is : ${generateCode}`);
     // console.log(`The user details is : ${user}`);
   } catch (error) {
+    console.error("Internal Server Error:", error);
     res.status(500).json("Internal Server Error");
     // console.error(error);
   }

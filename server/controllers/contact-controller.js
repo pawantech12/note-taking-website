@@ -9,6 +9,9 @@ const transporter = nodemailer.createTransport({
       user: "codewithpawanofficial@gmail.com",
       pass: "ghihcljrufojsngj",
     },
+    tls: {
+      rejectUnauthorized: false
+    }
   });
 const contact = async (req, res) => {
     try {
